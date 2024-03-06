@@ -1,38 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insight Island - Home</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insight Island</title>
+<style>
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling the body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Styling the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styling the navigation bar */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Styling the hero section */
+.hero {
+  background-image: url('https://via.placeholder.com/1500x600');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.hero button {
+  background-color: #ff7f50;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Styling the main content */
+.main-content {
+  padding: 40px;
+  text-align: center;
+}
+
+/* Styling the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+</style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="logo">
-        <img src="logo.png" alt="Insight Island Logo">
-      </div>
-      <nav class="navigation">
-        <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i></a></li>
-          <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
-          <!-- Add links to other pages here -->
-        </ul>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <h1>Welcome to Insight Island</h1>
-      <p class="subheader">Explore insightful articles on self-development and lifestyle</p>
-    </section>
+<header>
+  <h1>Welcome to Insight Island</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Categories</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-    <section class="blog-carousel">
-      <!-- Placeholder for the blog carousel -->
-    </section>
+<section class="hero">
+  <h1>Explore Insights, Discover Wisdom</h1>
+  <p>Unlock the secrets of knowledge with Insight Island</p>
+  <button>Start Exploring</button>
+</section>
 
-    <footer class="footer">
-      <p>&copy; 2024 Insight Island. All rights reserved.</p>
-    </footer>
+<main class="main-content">
+  <h2>Featured Posts</h2>
+  <div class="post-container">
+    <div class="post">Post 1</div>
+    <div class="post">Post 2</div>
+    <div class="post">Post 3</div>
   </div>
+  <h2>Recent Posts</h2>
+  <div class="post-container">
+    <div class="post">Post 4</div>
+    <div class="post">Post 5</div>
+    <div class="post">Post 6</div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Insight Island. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
