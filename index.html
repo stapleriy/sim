@@ -14,20 +14,18 @@
 
         /* Global styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #F9E897; /* Background color */
-            color: #124076; /* Text color */
+            font-family: 'Rubik', sans-serif;
+            background-color: #FAF6F0; /* Background color */
+            color: #000000; /* Text color */
         }
 
         .container {
             width: 80%;
             margin: 0 auto;
-            padding: 20px;
         }
 
         a {
-            color: #7F9F80; /* Link color */
+            color: #F4DFC8; /* Link color */
             text-decoration: none;
         }
 
@@ -35,10 +33,9 @@
             text-decoration: underline;
         }
 
-        /* Header styles */
         header {
-            background-color: #FFC374; /* Header background color */
-            padding: 20px 0;
+            background-color: #F4EAE0; /* Header background color */
+            padding: 10px 0;
         }
 
         header .container {
@@ -47,57 +44,61 @@
             align-items: center;
         }
 
-        header h1 a {
-            font-size: 24px;
+        h1 a {
+            font-family: 'Liham', sans-serif;
+            font-size: 36px;
         }
 
         nav ul {
             list-style: none;
+            display: flex;
         }
 
         nav ul li {
-            display: inline;
             margin-right: 20px;
         }
 
-        /* Hero section styles */
-        .hero {
-            background-color: #7F9F80; /* Hero background color */
-            padding: 50px 0;
+        nav ul li a {
+            font-family: 'Liham', sans-serif;
+            font-size: 18px;
         }
 
-        .hero .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .hero {
+            background-color: #FAF6F0; /* Hero background color */
+            padding: 50px 0;
+            text-align: center;
         }
 
         .hero-content {
             width: 50%;
+            text-align: left;
         }
 
         .hero-content h2 {
-            font-size: 36px;
+            font-size: 48px;
             margin-bottom: 20px;
+            font-family: 'Liham', sans-serif;
         }
 
         .hero-content p {
-            font-size: 18px;
+            font-size: 24px;
+            margin-bottom: 40px;
         }
 
         .hero-image img {
-            width: 50%;
+            width: 100%;
             height: auto;
+            border-radius: 10px;
         }
 
-        /* Blog posts section styles */
         .blog-posts {
             padding: 50px 0;
         }
 
         .blog-posts h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-family: 'Liham', sans-serif;
         }
 
         .carousel {
@@ -110,28 +111,29 @@
             width: 300px;
             margin-right: 20px;
             padding: 20px;
-            background-color: #F9E897; /* Blog post background color */
-            border-radius: 5px;
+            background-color: #F4DFC8; /* Blog post background color */
+            border-radius: 10px;
+            text-align: left;
         }
 
         .carousel-item h3 {
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 10px;
         }
 
         .carousel-item p {
-            font-size: 16px;
+            font-size: 18px;
         }
 
-        /* Footer styles */
         footer {
-            background-color: #7F9F80; /* Footer background color */
+            background-color: #F4EAE0; /* Footer background color */
             padding: 20px 0;
             text-align: center;
+            font-family: 'Liham', sans-serif;
         }
 
         footer p {
-            font-size: 14px;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -157,7 +159,6 @@
                 <p>Explore insightful articles on self-development and lifestyle.</p>
             </div>
             <div class="hero-image">
-                <!-- Add your image here -->
                 <img src="placeholder-image.jpg" alt="Hero Image">
             </div>
         </div>
@@ -166,7 +167,6 @@
     <section class="blog-posts">
         <div class="container">
             <h2>Featured Blog Posts</h2>
-            <!-- Add your carousel here -->
             <div class="carousel">
                 <div class="carousel-item">
                     <h3><a href="#">Blog Post 1</a></h3>
@@ -178,4 +178,17 @@
                 </div>
                 <div class="carousel-item">
                     <h3><a href="#">Blog Post 3</a></h3>
-                   
+                    <p>Description of Blog Post 3</p>
+                </div>
+                <!-- Add more carousel items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Authentic Isle</p>
+        </div>
+    </footer>
+</body>
+</html>
