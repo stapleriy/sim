@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentic Isle</title>
+    <title>Insight Island</title>
     <style>
         /* Reset styles */
         * {
@@ -15,7 +15,7 @@
         /* Global styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #000000; /* Background color */
+            background-color: #F4DFC8; /* Background color */
             color: #000000; /* Text color */
         }
 
@@ -25,7 +25,7 @@
         }
 
         a {
-            color: #F4DFC8; /* Link color */
+            color: #000000; /* Link color */
             text-decoration: none;
         }
 
@@ -46,8 +46,8 @@
 
         h1 a {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 36px;
-            color: #F4DFC8;
+            font-size: 24px;
+            color: #000000;
         }
 
         nav ul {
@@ -62,7 +62,6 @@
         nav ul li a {
             font-family: 'Roboto Condensed', sans-serif;
             font-size: 18px;
-            color: #F4DFC8;
         }
 
         .hero {
@@ -77,14 +76,14 @@
         }
 
         .hero-content h2 {
-            font-size: 48px;
+            font-size: 36px;
             margin-bottom: 20px;
             font-family: 'Roboto Slab', serif;
-            color: #F4DFC8;
+            color: #000000;
         }
 
         .hero-content p {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 40px;
         }
 
@@ -99,21 +98,22 @@
         }
 
         .blog-posts h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
+            font-size: 24px;
+            margin-bottom: 20px;
             font-family: 'Roboto Slab', serif;
-            color: #F4DFC8;
+            color: #000000;
         }
 
         .carousel {
             display: flex;
             overflow-x: auto;
             flex-wrap: nowrap;
+            scroll-snap-type: x mandatory;
         }
 
         .carousel-item {
             flex: 0 0 auto;
-            width: 300px;
+            width: 350px;
             margin-right: 20px;
             padding: 20px;
             background-color: #F4DFC8; /* Blog post background color */
@@ -123,13 +123,13 @@
         }
 
         .carousel-item h3 {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 10px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .carousel-item p {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         footer {
@@ -141,7 +141,6 @@
 
         footer p {
             font-size: 18px;
-            color: #F4DFC8;
         }
 
         /* Media queries for responsiveness */
@@ -165,11 +164,11 @@
             }
 
             .hero-content h2 {
-                font-size: 36px;
+                font-size: 30px;
             }
 
             .hero-content p {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .carousel-item {
@@ -178,7 +177,6 @@
 
             .carousel {
                 overflow-x: scroll;
-                scroll-snap-type: x mandatory;
             }
         }
     </style>
@@ -186,7 +184,7 @@
 <body>
     <header>
         <div class="container">
-            <h1><a href="#">Authentic Isle</a></h1>
+            <h1><a href="#">II</a></h1>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -201,7 +199,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Welcome to Authentic Isle</h2>
+                <h2>Welcome to Insight Island</h2>
                 <p>Explore insightful articles on self-development and lifestyle.</p>
             </div>
             <div class="hero-image">
@@ -212,7 +210,7 @@
 
     <section class="blog-posts">
         <div class="container">
-            <h2>Featured Blog Posts</h2>
+            <h2 style="font-size: 20px;">Featured Blog Posts</h2>
             <div class="carousel">
                 <div class="carousel-item">
                     <h3><a href="#">Blog Post 1</a></h3>
@@ -233,7 +231,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Authentic Isle</p>
+            <p>&copy; 2024 Insight Island</p>
         </div>
     </footer>
 </body>
