@@ -1,21 +1,24 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #F7DED0;
-  color: #000000;
+body, html {
   margin: 0;
   padding: 0;
 }
 
-.header {
-  background-color: #000000;
-  color: #F7DED0;
-  padding: 20px;
-  text-align: center;
+.container {
+  background-color: #F7DED0;
+  font-family: 'Roboto', sans-serif;
 }
 
-.subheader {
-  font-size: 20px;
-  margin-bottom: 30px;
+.header {
+  background-color: #000;
+  color: #F7DED0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo img {
+  height: 50px; /* Adjust height as needed */
 }
 
 .navigation ul {
@@ -25,63 +28,53 @@ body {
 
 .navigation li {
   display: inline;
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .navigation a {
   color: #F7DED0;
   text-decoration: none;
+  font-size: 20px; /* Adjust font size as needed */
 }
 
-.carousel {
-  display: flex;
-  flex-wrap: nowrap; /* Ensure items stay in a single row */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  margin: 20px;
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.blog-carousel {
+  text-align: center;
+  padding: 20px;
 }
 
 .blog-card {
-  width: 300px;
+  width: 200px;
   height: 200px;
   background-color: #FFFFFF;
-  margin-right: 20px;
-  flex-shrink: 0;
+  margin: 0 auto;
+  margin-bottom: 20px;
   border-radius: 10px;
-  scroll-snap-align: start;
-  cursor: pointer;
-  transition: transform 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .blog-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }
 
-.blog-card img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
-
-.blog-card-text {
-  padding: 10px;
-}
-
-.blog-title {
+.blog-card-title {
   font-weight: bold;
+  margin-top: 10px;
 }
 
-.blog-content {
+.blog-card-description {
   font-size: 14px;
+  margin-top: 5px;
 }
 
 .footer {
-  background-color: #000000;
+  background-color: #000;
   color: #F7DED0;
-  padding: 20px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 20px;
 }
