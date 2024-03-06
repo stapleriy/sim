@@ -35,7 +35,7 @@ body {
 
 .carousel {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap; /* Ensure items stay in a single row */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
