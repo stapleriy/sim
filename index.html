@@ -1,124 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insight Island</title>
-<style>
-/* Resetting default margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-/* Styling the body */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
-
-/* Styling the header */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Styling the navigation bar */
-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-/* Styling the hero section */
-.hero {
-  background-image: url('https://via.placeholder.com/1500x600');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 100px 0;
-}
-
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-
-.hero button {
-  background-color: #ff7f50;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Styling the main content */
-.main-content {
-  padding: 40px;
-  text-align: center;
-}
-
-/* Styling the footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-</style>
-</head>
-<body>
-
-<header>
-  <h1>Welcome to Insight Island</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Categories</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Explore Insights, Discover Wisdom</h1>
-  <p>Unlock the secrets of knowledge with Insight Island</p>
-  <button>Start Exploring</button>
-</section>
-
-<main class="main-content">
-  <h2>Featured Posts</h2>
-  <div class="post-container">
-    <div class="post">Post 1</div>
-    <div class="post">Post 2</div>
-    <div class="post">Post 3</div>
-  </div>
-  <h2>Recent Posts</h2>
-  <div class="post-container">
-    <div class="post">Post 4</div>
-    <div class="post">Post 5</div>
-    <div class="post">Post 6</div>
-  </div>
-</main>
-
-<footer>
-  <p>&copy; 2024 Insight Island. All rights reserved.</p>
-</footer>
-
-</body>
-</html>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap"
+    />
+  </head>
+  <body>
+    <div class="homepage">
+      <div class="homepage-inner">
+        <nav class="home-parent">
+          <b class="home">Home</b>
+          <b class="blog">Blog</b>
+          <b class="about">About</b>
+          <b class="contact">Contact</b>
+        </nav>
+      </div>
+      <section class="background-blur-frame">
+        <div class="wrapper-background-blur">
+          <img
+            class="background-blur-icon"
+            alt=""
+            src="./public/background-blur.svg"
+          />
+        </div>
+        <img
+          class="hero-image"
+          loading="lazy"
+          alt=""
+          src="./public/hero-image@2x.png"
+        />
+      </section>
+      <section class="rectangle-group">
+        <div class="inner-frame">
+          <h1 class="h1">Welcome</h1>
+          <div class="button-frame">
+            <h1 class="h11">to</h1>
+            <button class="button">
+              <div class="button-child"></div>
+              <div class="recent-blogs">RECENT BLOGS</div>
+            </button>
+            <h2 class="h2">
+              Explore insightful articles on self-development and lifestyle
+            </h2>
+            <h1 class="h12">
+              <p class="insight">Insight</p>
+              <p class="island">Island !</p>
+            </h1>
+          </div>
+        </div>
+      </section>
+      <section class="multi-rectangle-frame">
+        <textarea class="multi-rectangle-frame-child" rows="{17}" cols="{23}">
+        </textarea>
+        <textarea class="multi-rectangle-frame-item" rows="{17}" cols="{23}">
+        </textarea>
+        <textarea class="multi-rectangle-frame-inner" rows="{17}" cols="{23}">
+        </textarea>
