@@ -26,3 +26,6 @@ body {
   --padding-xl: 20px;
 
   /* Border radiuses */
+  --br-3xl: 22px;
+  --br-81xl: 100px;
+}
