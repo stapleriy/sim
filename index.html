@@ -1,370 +1,52 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+<p class="H1">Welcome</p>
+<p></p>
+<p class="H2">
+  to
+</p>
+<p></p>
+<p class="H3">Insight</p>
+<p></p>
+<p class="H4">Island !</p>
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap"
-    />
+<style>
+  .H1 {
+font-family: outfit;
+font-size: 55px;
+font-weight: bold;
+color: rgb(10, 10, 105);
+margin-left: 100px;
+margin-top: 50px;
+margin-bottom: 0px;
+}
 
-    <style>
-      body {
-        margin: 0;
-        line-height: normal;
-      }
+.H2 {
+  font-family: outfit;
+font-size: 50px;
+font-weight: bold;
+color: rgb(10, 10, 105);
+margin-left: 140px;
+margin-top: -8px;
+margin-bottom: -6px;
 
-      :root {
-        /* Fonts */
-        --h1: Outfit;
-        --font-merriweather: Merriweather;
+}
 
-        /* Font sizes */
-        --h1-size: 96px;
-        --font-size-10xl: 29px;
-        --font-size-29xl: 48px;
-        --font-size-5xl: 24px;
-        --font-size-3xl: 22px;
+.H3{
+  font-family: outfit;
+font-size: 80px;
+font-weight: bolder;
+color: rgb(10, 10, 105);
+margin-left: 95px;
+margin-top: -8px;
+margin-bottom: 0px;
+}
 
-        /* Colors */
-        --color-darkslategray: #1d3557;
-        --color-powderblue: rgba(168, 218, 220, 0.88);
-        --color-crimson-100: #e63946;
-        --color-crimson-200: rgba(230, 57, 70, 0);
-
-        /* Paddings */
-        --padding-lgi: 19px;
-        --padding-xl: 20px;
-
-        /* Border radiuses */
-        --br-3xl: 22px;
-        --br-81xl: 100px;
-      }
-
-      .home {
-        position: relative;
-        z-index: 3;
-      }
-
-      .blog {
-        width: 64px;
-        display: inline-block;
-        flex-shrink: 0;
-      }
-
-      .about,
-      .blog,
-      .contact {
-        position: relative;
-        z-index: 3;
-      }
-
-      .home-parent,
-      .homepage-inner {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        max-width: 100%;
-      }
-
-      .home-parent {
-        margin: 0;
-        justify-content: flex-start;
-        gap: 0 26px;
-        text-align: center;
-        font-size: var(--font-size-3xl);
-        color: var(--color-darkslategray);
-        font-family: var(--font-merriweather);
-      }
-
-      .homepage-inner {
-        width: 90%;
-        max-width: 1118px;
-        justify-content: flex-end;
-        padding: 0 var(--padding-xl);
-        box-sizing: border-box;
-        margin: 0 auto;
-      }
-
-      .background-blur-icon {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        position: absolute;
-        left: -9px;
-        top: 443px;
-        transform: scale(1.955);
-      }
-
-      .wrapper-background-blur {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 2020px;
-        height: 1194px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-image {
-        position: absolute;
-        top: 72px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 662px;
-        height: auto;
-        overflow: hidden;
-        object-fit: contain;
-        z-index: 2;
-      }
-
-      .background-blur-frame {
-        width: 90%;
-        max-width: 2020px;
-        height: 928px;
-        position: absolute;
-        margin: 0 !important;
-        top: 0;
-        right: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .h1,
-      .h11 {
-        margin: 0;
-        position: absolute;
-        top: 0;
-        left: 32px;
-        font-size: inherit;
-        font-weight: 800;
-        font-family: inherit;
-        display: inline-block;
-        width: 464px;
-        height: 126px;
-        z-index: 1;
-      }
-
-      .h11 {
-        left: 137px;
-        width: 127px;
-      }
-
-      .button-child {
-        height: 72px;
-        width: 264px;
-        position: relative;
-        border-radius: var(--br-81xl);
-        background-color: var(--color-crimson-200);
-        border: 4px solid var(--color-crimson-100);
-        box-sizing: border-box;
-        display: none;
-      }
-
-      .recent-blogs {
-        position: relative;
-        font-size: var(--font-size-5xl);
-        letter-spacing: 0.04em;
-        line-height: 26px;
-        font-weight: 900;
-        font-family: var(--font-merriweather);
-        color: var(--color-crimson-100);
-        white-space: pre-wrap;
-        text-align: center;
-        z-index: 1;
-      }
-
-      .button,
-      .h2 {
-        position: absolute;
-        z-index: 1;
-      }
-
-      .button {
-        cursor: pointer;
-        border: 4px solid var(--color-crimson-100);
-        padding: var(--padding-lgi) var(--padding-xl) 23px 24px;
-        background-color: var(--color-crimson-200);
-        top: 482px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: var(--br-81xl);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-      }
-
-      .button:hover {
-        background-color: transparent;
-        border: 4px solid #ff5261;
-        box-sizing: border-box;
-      }
-
-      .h2 {
-        top: 347px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 40px;
-        font-weight: 400;
-        font-family: var(--font-merriweather);
-        display: inline-block;
-        width: 90%;
-        max-width: 633px;
-      }
-
-      .h2,
-      .insight,
-      .island {
-        margin: 0;
-      }
-
-      .island {
-        white-space: pre-wrap;
-      }
-
-      .button-frame,
-      .h12 {
-        position: absolute;
-        left: 0;
-      }
-
-      .h12 {
-        margin: 0;
-        top: 112px;
-        font-size: inherit;
-        font-weight: 800;
-        font-family: inherit;
-        display: inline-block;
-        width: 90%;
-        max-width: 496px;
-        height: 226px;
-        z-index: 1;
-      }
-
-      .button-frame {
-        top: 108px;
-        width: 100%;
-        height: 550px;
-      }
-
-      .inner-frame {
-        height: 658px;
-        width: 90%;
-        max-width: 1163px;
-        position: relative;
-      }
-
-      .rectangle-group {
-        width: 90%;
-        max-width: 1260px;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0 var(--padding-xl) 56px;
-        box-sizing: border-box;
-        margin: 0 auto;
-        text-align: center;
-        font-size: var(--h1-size);
-        color: var(--color-darkslategray);
-        font-family: var(--h1);
-      }
-
-      .multi-rectangle-frame-child,
-      .multi-rectangle-frame-inner,
-      .multi-rectangle-frame-item {
-        border: 4px solid var(--color-darkslategray);
-        background-color: var(--color-powderblue);
-        height: 340px;
-        width: 460px;
-        outline: 0;
-        position: relative;
-        border-radius: var(--br-3xl);
-        box-sizing: border-box;
-        max-width: 100%;
-      }
-
-      .homepage,
-      .multi-rectangle-frame {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: center;
-        gap: 118px 0;
-        letter-spacing: normal;
-        position: relative;
-        background-color: #fff;
-        overflow: hidden;
-      }
-
-      .multi-rectangle-frame {
-        align-self: stretch;
-        flex-wrap: wrap;
-        gap: 0 19px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="homepage">
-      <div class="homepage-inner">
-        <nav class="home-parent">
-          <b class="home">Home</b>
-          <b class="blog">Blog</b>
-          <b class="about">About</b>
-          <b class="contact">Contact</b>
-        </nav>
-      </div>
-      <section class="background-blur-frame">
-        <div class="wrapper-background-blur">
-          <img
-            class="background-blur-icon"
-            alt=""
-            src="./public/background-blur.svg"
-          />
-        </div>
-        <img
-          class="hero-image"
-          loading="lazy"
-          alt=""
-          src="./public/hero-image@2x.png"
-        />
-      </section>
-      <section class="rectangle-group">
-        <div class="inner-frame">
-          <h1 class="h1">Welcome</h1>
-          <div class="button-frame">
-            <h1 class="h11">to</h1>
-            <button class="button">
-              <div class="button-child"></div>
-              <div class="recent-blogs">RECENT BLOGS</div>
-            </button>
-            <h2 class="h2">
-              Explore insightful articles on self-development and lifestyle
-            </h2>
-            <h1 class="h12">
-              <p class="insight">Insight</p>
-              <p class="island">Island !</p>
-            </h1>
-          </div>
-        </div>
-      </section>
-      <section class="multi-rectangle-frame">
-        <textarea class="multi-rectangle-frame-child" rows="17" cols="23">
-        </textarea>
-        <textarea class="multi-rectangle-frame-item" rows="17" cols="23">
-        </textarea>
-        <textarea class="multi-rectangle-frame-inner" rows="17" cols="23">
-        </textarea>
-      </section>
-    </div>
-  </body>
-</html>
+.H4{
+  font-family: outfit;
+font-size: 80px;
+font-weight: bolder;
+color: rgb(10, 10, 105);
+margin-left: 170px;
+margin-top: -2px;
+margin-bottom: 0px;
+}
+</style>
