@@ -65,7 +65,7 @@ body {
 }
 
 .menu-bar {
-  display: none; /* Hide the menu bar by default */
+  display: none !important;/* Hide the menu bar by default */
   flex-direction: row;
   background-color: rgb(248, 214, 255);
   margin: 8px 0;
