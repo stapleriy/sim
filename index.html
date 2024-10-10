@@ -195,6 +195,7 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
+            gap: 2rem;
         }
 
         h1 {
@@ -295,12 +296,13 @@
             opacity: 0.3;
         }
 
+        /* Darkened background animations */
         .background-animation div {
             position: absolute;
             display: block;
             width: 20px;
             height: 20px;
-            background: rgba(30, 77, 43, 0.2);
+            background: rgba(30, 77, 43, 0.35); /* Slightly darker */
             animation: animate 25s linear infinite;
             bottom: -150px;
         }
@@ -335,11 +337,41 @@
             animation-duration: 18s;
         }
 
+       .background-animation div:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
         .background-animation div:nth-child(5) {
             left: 65%;
             width: 20px;
             height: 20px;
             animation-delay: 0s;
+        }
+
+        .background-animation div:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .background-animation div:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .background-animation div:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
         }
 
         @keyframes animate {
@@ -355,107 +387,86 @@
             }
         }
 
+        /* Larger device layout */
         @media (min-width: 768px) {
-            .hamburger {
-                display: none;
+            .hero {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
             }
 
-            .nav-links {
-                display: flex;
+            h1 {
+                font-size: 6rem;
             }
 
-            .menu {
-                display: none;
-            }
-
-            .links a {
-                flex: 1 1 40%;
+            .description {
+                text-align: left;
+                max-width: 500px;
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
+
+    <div class="background-animation">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <nav>
+        <div class="logo">Simran's Design</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="menu" id="menu">
+        <span class="close-icon" onclick="toggleMenu()">×</span>
+        <a href="#">Home</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </div>
+
     <div class="parallax">
-        <nav>
-            <div class="logo">Simran</div>
-            <div class="nav-links">
-                <a href="#portfolio">Portfolio</a>
-                <a href="#blog">Blog</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-
-        <div class="menu">
-            <span class="close-icon">×</span>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#blog">Blog</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <div class="background-animation">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
         <div class="parallax__layer parallax__layer--base">
             <main>
-                <div class="hero">
-                    <h1>Hi!</h1>
+                <section class="hero">
+                    <h1>Hi, I'm Simran</h1>
                     <div class="description">
-                        <p><strong>I'm Simran.</strong> Currently, I'm on a self-learning journey to become a UX/UI designer. Here, you'll find my projects and snippets of whatever else I'm dabbling into along the way.</p>
+                        I'm an aspiring UX/UI designer. My journey involves crafting engaging, intuitive, and user-friendly designs. Let's build something amazing together!
                     </div>
-                </div>
-                <div class="cta">
-                    <p>Feel Free to Explore My Work!</p>
-                </div>
-                <div class="links">
-                    <a href="#portfolio">Portfolio</a>
-                    <a href="#blog">Blog</a>
-                </div>
+                </section>
             </main>
-
-            <footer>
-                <h3>Get In Touch</h3>
-                <div class="footer-links">
-                    <a href="#contact">Contact</a>
-                    <a href="#linkedin">LinkedIn</a>
-                    <a href="#others">Others</a>
-                </div>
-            </footer>
         </div>
     </div>
 
+    <footer>
+        <h3>Connect with me</h3>
+        <div class="footer-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const menu = document.querySelector('.menu');
-        const closeIcon = document.querySelector('.close-icon');
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('open');
 
-        hamburger.addEventListener('click', () => {
-            menu.classList.add('open');
-            hamburger.classList.add('open');
-        });
-
-        closeIcon.addEventListener('click', () => {
-            menu.classList.remove('open');
-            hamburger.classList.remove('open');
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-                menu.classList.remove('open');
-                hamburger.classList.remove('open');
-            }
-        });
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.toggle('open');
+        }
     </script>
+
 </body>
 </html>
