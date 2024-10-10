@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simran Poudel</title>
+    <title>Simran's UX/UI Design Journey</title>
     <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -48,10 +48,6 @@
 
         .parallax__layer--base {
             transform: translateZ(0);
-        }
-
-        .parallax__layer--back {
-            transform: translateZ(-1px) scale(2);
         }
 
         nav {
@@ -194,8 +190,6 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            text-align: center;
-            gap: 2rem;
         }
 
         h1 {
@@ -293,16 +287,15 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.5;
         }
 
-        /* Darkened background animations */
         .background-animation div {
             position: absolute;
             display: block;
             width: 20px;
             height: 20px;
-            background: rgba(30, 77, 43, 0.35); /* Slightly darker */
+            background: rgba(30, 77, 43, 0.5);
             animation: animate 25s linear infinite;
             bottom: -150px;
         }
@@ -337,19 +330,12 @@
             animation-duration: 18s;
         }
 
-       .background-animation div:nth-child(4) {
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            animation-delay: 0s;
-            animation-duration: 18s;
-        }
-
         .background-animation div:nth-child(5) {
             left: 65%;
             width: 20px;
             height: 20px;
             animation-delay: 0s;
+animation-duration: 20s;
         }
 
         .background-animation div:nth-child(6) {
@@ -366,14 +352,6 @@
             animation-delay: 7s;
         }
 
-        .background-animation div:nth-child(8) {
-            left: 50%;
-            width: 25px;
-            height: 25px;
-            animation-delay: 15s;
-            animation-duration: 45s;
-        }
-
         @keyframes animate {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -387,7 +365,6 @@
             }
         }
 
-        /* Larger device layout */
         @media (min-width: 768px) {
             .hero {
                 flex-direction: row;
@@ -400,73 +377,142 @@
             }
 
             .description {
-                text-align: left;
-                max-width: 500px;
-                font-size: 1.3rem;
+                text-align: right;
             }
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background-color: var(--color-background);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .blog-section h2 {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+        }
+
+        .blogs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .blog {
+            background-color: var(--color-primary);
+            color: var(--color-background);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+
+        .blog:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog p {
+            font-size: 1.2rem;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <div class="background-animation">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+<div class="parallax">
+    <div class="parallax__layer parallax__layer--base">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">Simran</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu">
+                <span class="close-icon">&times;</span>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Work</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
 
-    <nav>
-        <div class="logo">Simran's Design</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- Hero Section -->
+        <main class="hero">
+            <h1>Hi!</h1>
+            <div class="description">
+                <p>Welcome to my UX/UI design journey. I’m Simran, a designer passionate about crafting simple yet impactful user experiences.</p>
+            </div>
+        </main>
+
+        <!-- Blog Section -->
+        <section class="blog-section">
+            <h2>Latest Blogs</h2>
+            <div class="blogs">
+                <div class="blog">
+                    <h3>Designing for Accessibility</h3>
+                    <p>Exploring how to make your designs more inclusive and accessible for everyone.</p>
+                </div>
+                <div class="blog">
+                    <h3>The Future of UX</h3>
+                    <p>Diving into emerging trends that will shape the future of UX/UI design.</p>
+                </div>
+                <div class="blog">
+                    <h3>Minimalist vs Simplistic Design</h3>
+                    <p>Understanding the subtle differences and how to apply them in your work.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Background Animation -->
+        <div class="background-animation">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-    </nav>
 
-    <div class="menu" id="menu">
-        <span class="close-icon" onclick="toggleMenu()">×</span>
-        <a href="#">Home</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
+        <!-- Footer -->
+        <footer>
+            <h3>Connect with me</h3>
+            <div class="footer-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+                <a href="#">Dribbble</a>
+            </div>
+        </footer>
     </div>
+</div>
 
-    <div class="parallax">
-        <div class="parallax__layer parallax__layer--base">
-            <main>
-                <section class="hero">
-                    <h1>Hi, I'm Simran</h1>
-                    <div class="description">
-                        I'm an aspiring UX/UI designer. My journey involves crafting engaging, intuitive, and user-friendly designs. Let's build something amazing together!
-                    </div>
-                </section>
-            </main>
-        </div>
-    </div>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    const closeIcon = document.querySelector('.close-icon');
 
-    <footer>
-        <h3>Connect with me</h3>
-        <div class="footer-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </div>
-    </footer>
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        menu.classList.toggle('open');
+    });
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('open');
-
-            const hamburger = document.querySelector('.hamburger');
-            hamburger.classList.toggle('open');
-        }
-    </script>
-
+    closeIcon.addEventListener('click', () => {
+        menu.classList.remove('open');
+        hamburger.classList.remove('open');
+    });
+</script>
 </body>
 </html>
