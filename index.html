@@ -50,6 +50,10 @@
             transform: translateZ(0);
         }
 
+        .parallax__layer--back {
+            transform: translateZ(-1px) scale(2);
+        }
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -190,6 +194,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            text-align: center;
         }
 
         h1 {
@@ -287,7 +292,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.5;
+            opacity: 0.3;
         }
 
         .background-animation div {
@@ -295,7 +300,7 @@
             display: block;
             width: 20px;
             height: 20px;
-            background: rgba(30, 77, 43, 0.5);
+            background: rgba(30, 77, 43, 0.2);
             animation: animate 25s linear infinite;
             bottom: -150px;
         }
@@ -335,21 +340,6 @@
             width: 20px;
             height: 20px;
             animation-delay: 0s;
-animation-duration: 20s;
-        }
-
-        .background-animation div:nth-child(6) {
-            left: 75%;
-            width: 110px;
-            height: 110px;
-            animation-delay: 3s;
-        }
-
-        .background-animation div:nth-child(7) {
-            left: 35%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 7s;
         }
 
         @keyframes animate {
@@ -366,120 +356,50 @@ animation-duration: 20s;
         }
 
         @media (min-width: 768px) {
-            .hero {
-                flex-direction: row;
-                justify-content: space-between;
-                text-align: left;
+            .hamburger {
+                display: none;
             }
 
-            h1 {
-                font-size: 6rem;
+            .nav-links {
+                display: flex;
             }
 
-            .description {
-                text-align: right;
+            .menu {
+                display: none;
             }
-        }
 
-        /* Blog Section */
-        .blog-section {
-            background-color: var(--color-background);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .blog-section h2 {
-            font-size: 3rem;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-        }
-
-        .blogs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .blog {
-            background-color: var(--color-primary);
-            color: var(--color-background);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            transition: transform 0.3s ease;
-        }
-
-        .blog:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .blog h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .blog p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+            .links a {
+                flex: 1 1 40%;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="parallax">
-    <div class="parallax__layer parallax__layer--base">
-        <!-- Navigation -->
+    <div class="parallax">
         <nav>
             <div class="logo">Simran</div>
+            <div class="nav-links">
+                <a href="#portfolio">Portfolio</a>
+                <a href="#blog">Blog</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu">
-                <span class="close-icon">&times;</span>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Work</a>
-                <a href="#">Contact</a>
-            </div>
         </nav>
 
-        <!-- Hero Section -->
-        <main class="hero">
-            <h1>Hi!</h1>
-            <div class="description">
-                <p>Welcome to my UX/UI design journey. I’m Simran, a designer passionate about crafting simple yet impactful user experiences.</p>
-            </div>
-        </main>
+        <div class="menu">
+            <span class="close-icon">×</span>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
 
-        <!-- Blog Section -->
-        <section class="blog-section">
-            <h2>Latest Blogs</h2>
-            <div class="blogs">
-                <div class="blog">
-                    <h3>Designing for Accessibility</h3>
-                    <p>Exploring how to make your designs more inclusive and accessible for everyone.</p>
-                </div>
-                <div class="blog">
-                    <h3>The Future of UX</h3>
-                    <p>Diving into emerging trends that will shape the future of UX/UI design.</p>
-                </div>
-                <div class="blog">
-                    <h3>Minimalist vs Simplistic Design</h3>
-                    <p>Understanding the subtle differences and how to apply them in your work.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Background Animation -->
         <div class="background-animation">
-            <div></div>
-            <div></div>
             <div></div>
             <div></div>
             <div></div>
@@ -487,32 +407,55 @@ animation-duration: 20s;
             <div></div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <h3>Connect with me</h3>
-            <div class="footer-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">Behance</a>
-                <a href="#">Dribbble</a>
-            </div>
-        </footer>
+        <div class="parallax__layer parallax__layer--base">
+            <main>
+                <div class="hero">
+                    <h1>Hi!</h1>
+                    <div class="description">
+                        <p><strong>I'm Simran.</strong> Currently, I'm on a self-learning journey to become a UX/UI designer. Here, you'll find my projects and snippets of whatever else I'm dabbling into along the way.</p>
+                    </div>
+                </div>
+                <div class="cta">
+                    <p>Feel Free to Explore My Work!</p>
+                </div>
+                <div class="links">
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#blog">Blog</a>
+                </div>
+            </main>
+
+            <footer>
+                <h3>Get In Touch</h3>
+                <div class="footer-links">
+                    <a href="#contact">Contact</a>
+                    <a href="#linkedin">LinkedIn</a>
+                    <a href="#others">Others</a>
+                </div>
+            </footer>
+        </div>
     </div>
-</div>
 
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const menu = document.querySelector('.menu');
-    const closeIcon = document.querySelector('.close-icon');
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        const closeIcon = document.querySelector('.close-icon');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        menu.classList.toggle('open');
-    });
+        hamburger.addEventListener('click', () => {
+            menu.classList.add('open');
+            hamburger.classList.add('open');
+        });
 
-    closeIcon.addEventListener('click', () => {
-        menu.classList.remove('open');
-        hamburger.classList.remove('open');
-    });
-</script>
+        closeIcon.addEventListener('click', () => {
+            menu.classList.remove('open');
+            hamburger.classList.remove('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('open');
+                hamburger.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>
