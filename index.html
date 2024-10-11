@@ -25,6 +25,7 @@
             background-color: var(--color-background);
             color: var(--color-text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         nav {
@@ -60,6 +61,23 @@
             margin-left: 1rem;
         }
 
+        .hamburger {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--color-background);
+            transition: all 0.3s ease;
+        }
+
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -80,7 +98,7 @@
         .description {
             background-color: rgba(30, 77, 43, 0.1);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 20px;
             margin-bottom: 2rem;
         }
 
@@ -102,16 +120,18 @@
         .links a {
             background-color: var(--color-primary);
             color: var(--color-background);
-            padding: 1rem;
-            border-radius: 5px;
+            padding: 1.5rem;
+            border-radius: 20px;
             text-align: center;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .links a:hover {
             background-color: var(--color-secondary);
+            transform: translateY(-5px);
         }
 
         footer {
@@ -134,9 +154,100 @@
             text-decoration: none;
         }
 
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .background-animation div {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(30, 77, 43, 0.4);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+        }
+
+        .background-animation div:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .background-animation div:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .background-animation div:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .background-animation div:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .background-animation div:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
         @media (min-width: 768px) {
             .nav-links {
                 display: flex;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .hero {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 4rem;
+                flex: 1;
+                margin-bottom: 0;
+            }
+
+            .description {
+                flex: 1;
             }
 
             .links {
@@ -146,6 +257,8 @@
 
             .links a {
                 flex: 1;
+                font-size: 1.5rem;
+                padding: 2rem;
             }
         }
     </style>
@@ -160,6 +273,11 @@
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -169,13 +287,13 @@
             <div class="description">
                 <p><strong>I'm Simran.</strong> Currently, I'm on a self-learning journey to become a UX/UI designer. Here, you'll find my projects and snippets of whatever else I'm dabbling into along the way.</p>
             </div>
-            <div class="cta">
-                <p>Feel Free to Explore My Work!</p>
-            </div>
-            <div class="links">
-                <a href="#portfolio">Portfolio</a>
-                <a href="#blog">Blog</a>
-            </div>
+        </div>
+        <div class="cta">
+            <p>Feel Free to Explore My Work!</p>
+        </div>
+        <div class="links">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
         </div>
     </main>
 
@@ -187,5 +305,21 @@
             <a href="#others">Others</a>
         </div>
     </footer>
+
+    <div class="background-animation">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        hamburger.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>
