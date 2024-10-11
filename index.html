@@ -416,6 +416,16 @@
             hamburger.classList.toggle('open');
             menu.classList.toggle('open');
         });
+        document.addEventListener('click', (event) => {
+        const isClickInsideMenu = menu.contains(event.target);
+        const isClickInsideHamburger = hamburger.contains(event.target);
+
+        if (!isClickInsideMenu && !isClickInsideHamburger) {
+        hamburger.classList.remove('open');
+        menu.classList.remove('open');
+        }
+        });
+
     </script>
 </body>
 </html>
