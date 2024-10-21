@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbetween Inkstains</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e4d2b;
+            --secondary-color: #4d5d6d;
+            --background-color: #f4f1ea;
+            --card-color: #ffffff;
+            --ink-color: rgba(30, 77, 43, 0.1);
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Montaga', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transform: scaleX(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover::after {
+            transform: scaleX(1);
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-intro {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+        }
+
+        .blog-card {
+            background-color: var(--card-color);
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--ink-color);
+            border-radius: 40px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+
+        .blog-card-content {
+            padding: 20px;
+            position: relative;
+        }
+
+        .blog-card h3 {
+            font-family: 'Montaga', serif;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .read-time {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            text-align: right;
+        }
+
+        .blog-post {
+            display: none;
+            background-color: var(--card-color);
+            border-radius: 20px;
+            padding:             40px;
+            margin-top: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-post::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 200px;
+            height: 200px;
+            background: var(--ink-color);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .blog-post::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            right: -80px;
+            width: 160px;
+            height: 160px;
+            background: var(--ink-color);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .blog-post h2 {
+            font-family: 'Montaga', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .inkstain {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%231e4d2b" d="M50 10c21.54 0 39 17.46 39 39s-17.46 39-39 39S11 70.54 11 49 28.46 10 50 10zm0 2c-20.435 0-37 16.565-37 37s16.565 37 37 37 37-16.565 37-37-16.565-37-37-37z"/></svg>');
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .inkstain:nth-child(1) {
+            top: -50px;
+            left: -50px;
+            transform: rotate(15deg) scale(0.8);
+        }
+
+        .inkstain:nth-child(2) {
+            bottom: -100px;
+            right: -100px;
+            transform: rotate(-20deg) scale(1.2);
+        }
+
+        .inkstain:nth-child(3) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg) scale(0.6);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-intro {
+                font-size: 1.2rem;
+            }
+
+            .blog-post {
+                padding: 20px;
+            }
+
+            .blog-post h2 {
+                font-size: 1.8rem;
+            }
+
+            .blog-post-content {
+                font-size: 1rem;
+            }
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+            justify-content: center; /* Center modal content */
+            align-items: center; /* Center modal content */
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .minimize-btn {
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function toggleBlogPost(postId) {
+            const post = document.getElementById(postId);
+            if (post.style.display === "none" || post.style.display === "") {
+                post.style.display = "block";
+            } else {
+                post.style.display = "none";
+            }
+        }
+        let currentPostId = null;
+
+        function toggleBlogPost(postId) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            const postContent = document.getElementById(postId);
+
+            if (currentPostId === postId) {
+                // If the same post is clicked, close it
+                modal.style.display = "none";
+                currentPostId = null;
+            } else {
+                // Show the clicked post and hide the previous one if any
+                if (currentPostId) {
+                    document.getElementById(currentPostId).style.display = "none";
+                }
+
+                modal.style.display = "flex";
+                modalContent.innerHTML = postContent.innerHTML;
+                currentPostId = postId;
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = "none";
+            currentPostId = null;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        function minimizePost() {
+            const modalContent = document.getElementById('modal-content');
+            const minimizeBtn = document.getElementById('minimize-btn');
+
+            if (modalContent.style.display === "none") {
+                modalContent.style.display = "block";
+                minimizeBtn.innerHTML = "Minimize";
+            } else {
+                modalContent.style.display = "none";
+                minimizeBtn.innerHTML = "Maximize";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="inkstain"></div>
+    <div class="inkstain"></div>
+    <div class="inkstain"></div>
+
+    <div class="container">
+        <header>
+            <img src="Inbetween Inkstains Logo Light.png" alt="Inbetween Inkstains Logo" class="logo">
+            <h1>Inbetween Inkstains</h1>
+            <p class="greeting">Thoughts that spill between the lines</p>
+        </header>
+
+        <p class="blog-intro">Recent Musings</p>
+
+        <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <div class="blog-card" onclick="toggleBlogPost('blog-post-1')">
+                <div class="blog-card-content">
+                    <h3>The Worst Isn't That Bad</h3>
+                    <p>Changing perspective on challenges for personal growth.</p>
+                    <div class="read-time">3                    min read</div>
+                  </div>
+              </div>
+  
+              <!-- Blog Card 2 -->
+              <div class="blog-card" onclick="toggleBlogPost('blog-post-2')">
+                  <div class="blog-card-content">
+                      <h3>Embracing the In-Between</h3>
+                      <p>Finding beauty in life's transitional moments.</p>
+                      <div class="read-time">4 min read</div>
+                  </div>
+              </div>
+  
+              <!-- Blog Card 3 -->
+              <div class="blog-card" onclick="toggleBlogPost('blog-post-3')">
+                  <div class="blog-card-content">
+                      <h3>The Art of Mindful Writing</h3>
+                      <p>Infusing presence into your words for impact.</p>
+                      <div class="read-time">5 min read</div>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Blog Post 1 -->
+          <div id="blog-post-1" class="blog-post">
+              <h2>The Worst Isn't That Bad</h2>
+              <div class="blog-post-content">
+                  <p>Most of us tend to catastrophize even the smallest things. What if I told you your "end of the world" scenario might not be as bad as you think? When things go wrong, we often feel like it's the worst situation ever and that there's no way to fix it. But deep down, you know that's not true. Especially if you're an overthinker like me, you know exactly what I'm talking about.</p>
+                  <p>It's natural to prepare for adversity, and often times, it's a valuable skill. But if you're unaware of it, this subconscious behaviour can hold you back in many ways. Plus, it can be mentally taxing in everyday life. So how do we actually embrace that "the worst isn't that bad"?</p>
+                  <h4>How I Changed My Mindset</h4>
+                  <p>One day, I had sort of an epiphany, if you will. The rain is going to happen whether I like it or not. It's completely out of my control. Me being annoyed didn't stop the rain—it only drained my energy. I'd get worked up about it even when it wasn't raining, just thinking that it might anytime go out. It was absurd. I was creating my own frustration and blaming something I had no control over.</p>
+                  <p>This might sound silly, but once I started seeing rain as not the end of the world, it has had a domino effect on other areas of my life. I've come to accept that the "worst-case scenario" isn't as bad as we think.</p>
+                  <h4>When you catch yourself overthinking, try asking this question: Is it within my control?</h4>
+                  <p><strong>Yes? - What Can You Do?</strong><br>If something is within your control, then there's always a way to approach it. It's normal to feel overwhelmed at first. Just recognizing that you can influence the situation takes away some of the power it has over you. Start small, break the task down into manageable steps, and go from there. If you're in control, it's not the worst.</p>
+                  <p>Here's what I did: I made sure to always carry an umbrella, no exceptions. My mode of commute is public transport, and I walk quite a bit. I also started wearing shoes that I didn't mind getting a little muddy on rainy days. That tiny shift reduced so much frustration in my life. I focused on what I could control and let go of the rest.</p>
+                  <p><strong>No? - Let It Go</strong><br>If something isn't within your control, you've got to accept that. Some circumstances are always going to be beyond our influence, and that's not always the end. Usually, the process part of a situation is within our control, but the outcome is not. Do what you can, and let the rest flow as it does. As George Orwell once said, "Happiness can only exist in acceptance."</p>
+                  <p>Here's what I did: I've now accepted that the rain and other similar things in life aren't really within my bubble of control. These days, when I find myself overanalyzing and exaggerating anything, I pause and ask myself, "Is this within my control?" If it is, I try to do what I can. And if not, I simply accept the situation as it is. This simple mindset shift has helped me massively.</p>
+                  <p>Lastly, I want to emphasize that this is based on my experiences and what's worked for me. I'm in no way implying this applies to every situation in life or everyone's unique challenges. It isn't my intention to downplay anyone's struggles but rather offer some value from what I've learned.                </p>
+                </div>
+            </div>
+    
+            <!-- Blog Post 2 -->
+            <div id="blog-post-2" class="blog-post">
+                <h2>Embracing the In-Between</h2>
+                <div class="blog-post-content">
+                    <p>Life is often a series of transitions, and it can be easy to feel lost in the in-between moments. Whether it's moving from one job to another, transitioning from school to the workforce, or even shifting from one phase of life to another, these periods can be daunting. However, I've learned that embracing these in-between moments can lead to growth and unexpected opportunities.</p>
+                    <p>Instead of viewing these transitions as voids, I now see them as spaces filled with potential. They are opportunities to reflect on where I've been and where I want to go. This shift in perspective has transformed my approach to change.</p>
+                    <h4>Finding Beauty in Uncertainty</h4>
+                    <p>When we are in a state of uncertainty, it can be tempting to rush through it or to cling to what is familiar. However, I've found that slowing down and allowing myself to be present in these moments can lead to deeper insights. I take time to journal, meditate, or simply sit with my thoughts. This practice has helped me appreciate the beauty of the unknown.</p>
+                    <h4>Action Steps</h4>
+                    <p>Here are a few strategies that have helped me embrace the in-between:</p>
+                    <ul>
+                        <li><strong>Practice Mindfulness:</strong> Spend time each day being present. It can be as simple as taking a walk and observing your surroundings.</li>
+                        <li><strong>Set Small Goals:</strong> Instead of focusing on the end result, set small, achievable goals that guide you through the transition.</li>
+                        <li><strong>Connect with Others:</strong> Share your feelings with friends or family. You may find that others are experiencing similar transitions.</li>
+                    </ul>
+                    <p>Ultimately, it's about shifting our mindset from fear of the unknown to curiosity and excitement for what lies ahead.</p>
+                </div>
+            </div>
+    
+            <!-- Blog Post 3 -->
+            <div id="blog-post-3" class="blog-post">
+                <h2>The Art of Mindful Writing</h2>
+                <div class="blog-post-content">
+                    <p>Writing is not just a way to communicate; it's an art form that can be deeply transformative. Mindful writing, in particular, allows us to infuse presence and intention into our words, creating a more profound connection with our readers.</p>
+                    <p>When I first started writing, I often rushed through my thoughts, eager to get them down on paper. However, I soon realized that this approach often led to superficial writing. By embracing mindfulness in my writing practice, I began to notice a significant shift in the quality of my work.</p>
+                    <h4>What is Mindful Writing?</h4>
+                    <p>Mindful writing is about being fully present in the moment as you write. It involves paying attention to your thoughts, feelings, and the environment around you. This practice encourages authenticity and depth in your writing.</p>
+                    <h4>Tips for Mindful Writing</h4>
+                    <p>Here are some tips to incorporate mindfulness into your writing routine:</p>
+                    <ul>
+                        <li><strong>Set the Scene:</strong> Create a comfortable and distraction-free writing space. This helps you focus and get into the right mindset.</li>
+                        <li><strong>Breathe and Center Yourself:</strong> Before you start writing, take a few deep breaths to center yourself. This helps clear your mind and prepare you for the task ahead.</li>
+                        <li><strong>Write Without Judgment:</strong> Allow your thoughts to flow freely without self-criticism. The first draft is just for you; you can refine it later.</li>
+                    </ul>
+                    <p>By practicing mindful writing, I've discovered a deeper connection to my thoughts and a greater appreciation for the writing process itself. It has become a source of joy rather than just a task.</p>
+                </div>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+          <div class="modal-content" id="modal-content">
+              <span class="close-btn" onclick="closeModal()">&times;</span>
+              <button id="minimize-btn" class="minimize-btn" onclick="minimizePost()">Minimize</button>
+              <div id="post-content"></div>
+          </div>
+      </div>
+  
+      <div class="container">
+          <header>
+              <img src="Inbetween Inkstains Logo Light.png" alt="Inbetween Inkstains Logo" class="logo">
+              <h1>Inbetween Inkstains</h1>
+              <p class="greeting">Thoughts that spill between the lines</p>
+          </header>
+  
+          <p class="blog-intro">Recent Musings</p>
+  
+          <div class="blog-grid">
+              <!-- Blog Card 1 -->
+              <div class="blog-card" onclick="toggleBlogPost('            blog-post-1')">
+                <div class="blog-card-content">
+                    <h3>The Worst Isn't That Bad</h3>
+                    <p>Understanding that challenges may not be as daunting as they seem.</p>
+                    <div class="read-time">6 min read</div>
+                </div>
+            </div>
+  
+            <!-- Blog Card 2 -->
+            <div class="blog-card" onclick="toggleBlogPost('blog-post-2')">
+                <div class="blog-card-content">
+                    <h3>Embracing the In-Between</h3>
+                    <p>Finding beauty in life's transitional moments.</p>
+                    <div class="read-time">4 min read</div>
+                </div>
+            </div>
+  
+            <!-- Blog Card 3 -->
+            <div class="blog-card" onclick="toggleBlogPost('blog-post-3')">
+                <div class="blog-card-content">
+                    <h3>The Art of Mindful Writing</h3>
+                    <p>Infusing presence into your words for impact.</p>
+                    <div class="read-time">5 min read</div>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Blog Post 1 -->
+        <div id="blog-post-1" class="blog-post" style="display:none;">
+            <h2>The Worst Isn't That Bad</h2>
+            <div class="blog-post-content">
+                <p>Most of us tend to catastrophize even the smallest things...</p>
+                <!-- Additional content here -->
+            </div>
+        </div>
+  
+        <!-- Blog Post 2 -->
+        <div id="blog-post-2" class="blog-post" style="display:none;">
+            <h2>Embracing the In-Between</h2>
+            <div class="blog-post-content">
+                <p>Life is often a series of transitions...</p>
+                <!-- Additional content here -->
+            </div>
+        </div>
+  
+        <!-- Blog Post 3 -->
+        <div id="blog-post-3" class="blog-post" style="display:none;">
+            <h2>The Art of Mindful Writing</h2>
+            <div class="blog-post-content">
+                <p>Writing is not just a way to communicate...</p>
+                <!-- Additional content here -->
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+
+
+
+

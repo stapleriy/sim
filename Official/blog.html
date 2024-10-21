@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Inbetween Inkstains
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+  <link rel="icon" href="II Favicon.png" type="image/png">
+
+</head>
+<body>  
+  <h1>Inbetween Inkstains</h1>
+  <h2>Scribbles from turning pages of life</h2>
+  <img src="Inbetween Inkstains Logo Light .png" alt="Inbetween Inkstains Logo" class="logo">
+
+  <div class="card">
+    <h3 class="card-title">The Worst Isn't That Bad</h3>
+    <div class="card-content" style="display: none;">
+          <section id="blog">
+            <h2>Blog Posts</h2>
+            <article>
+              <h3>The Worst Isn't That Bad</h3>
+              <p>Most of us tend to catastrophise even the smallest things. What if I told you your "end of the world" scenario might not be as bad as you think? When things go wrong, we often feel like it’s the worst situation ever and that there’s no way to fix it. But deep down, you know that’s not true. Especially if you’re an overthinker like me, you know exactly what I’m talking about.</p>
+              
+              <p>It’s natural to prepare for adversity, and often times, it's a valuable skill. But if you're unaware of it, this subconscious behaviour can hold you back in many ways. Plus, it can be mentally taxing in everyday life. So how do we actually embrace that "the worst isn't that bad"?</p>
+          
+              <p>Let me share a personal story on how this mindset used to hold me back and what I did to change it.</p>
+          
+              <p>I’ve never been a fan of rain. In fact, it used to bother me a lot. Living in a place where the weather is unpredictable, the rain would catch me off guard all the time; the weather app could never catch up. What annoyed me most was my shoes getting wet. I’d mostly avoid wearing my 'nicer' shoes because I didn’t want the rain to ruin them and, as a result, get frustrated that I wasn't getting use out of my shoes. It used to be a whole thought process. If you’ve dealt with something similar, you get it. If not, it probably sounds like a self-created problem—which it was, in a way.</p>
+          
+              <h4>How I Changed My Mindset</h4>
+              <p>One day, I had sort of an epiphany, if you will. The rain is going to happen whether I like it or not. It’s completely out of my control. Me being annoyed didn’t stop the rain—it only drained my energy. I’d get worked up about it even when it wasn’t raining, just thinking that it might anytime go out. It was absurd. I was creating my own frustration and blaming something I had no control over.</p>
+          
+              <p>Even if rain doesn’t bother you, I bet you can relate to stressing over things outside your control.</p>
+          
+              <p>This might sound silly, but once I started seeing rain as not the end of the world, it has had a domino effect on other areas of my life. I've come to accept that the “worst-case scenario” isn’t as bad as we think.</p>
+          
+              <p>So what can you do to minimize your “this is the worst it ever has been”?</p>
+          
+              <h4>When you catch yourself overthinking, try asking this question: Is it within my control?</h4>
+          
+              <p><strong>Yes? - What Can You Do?</strong><br>
+              If something is within your control, then there’s always a way to approach it. It’s normal to feel overwhelmed at first. Just recognizing that you can influence the situation takes away some of the power it has over you. Start small, break the task down into manageable steps, and go from there. If you’re in control, it’s not the worst.</p>
+          
+              <p>Here’s what I did: I made sure to always carry an umbrella, no exceptions. My mode of commute is public transport, and I walk quite a bit. I also started wearing shoes that I didn’t mind getting a little muddy on rainy days. That tiny shift reduced so much frustration in my life. I focused on what I could control and let go of the rest.</p>
+          
+              <p><strong>No? - Let It Go</strong><br>
+              If something isn’t within your control, you’ve got to accept that. Some circumstances are always going to be beyond our influence, and that’s not always the end. Usually, the process part of a situation is within our control, but the outcome is not. Do what you can, and let the rest flow as it does. As George Orwell once said, "Happiness can only exist in acceptance."</p>
+          
+              <p>Here’s what I did: I’ve now accepted that the rain and other similar things in life aren't really within my bubble of control. These days, when I find myself overanalyzing and exaggerating anything, I pause and ask myself, “Is this within my control?” If it is, I try to do what I can. And if not, I simply accept the situation as it is. This simple mindset shift has helped me massively.</p>
+          
+              <p>Lastly, I want to emphasize that this is based on my experiences and what’s worked for me. I’m in no way implying this applies to every situation in life or everyone’s unique challenges. It isn’t my intention to downplay anyone’s struggles but rather offer some value from what I've learned. I invite you to take what resonates and leave the rest.</p>
+            </article>
+          </section>
+        <p class="read-time">Read time: 3 minutes</p>
+    </div>
+</div>
+
+
+
+<script>
+  const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const content = card.querySelector('.card-content');
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    });
+});
+
+</script>
+
+</body>
+<style>
+  body{
+    font-family: Montaga, Arial, Helvetica, sans-serif;
+    background-color: ivory;
+    color: #1e4d2b;
+    font-size: 38px;
+    text-align: center;
+  }
+  .logo{
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card {
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.card:hover {
+    background-color: rgba(30, 77, 43, 0.1); /* Light background on hover */
+}
+
+.card-content {
+    color: #4d5d6d; /* Slightly lighter color for content */
+    font-size: 20px ;
+}
+
+.read-time {
+    font-size: 16px; /* Adjust font size for read time */
+    margin-top: 8px; /* Space above read time */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    body {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    .card {
+        font-size: 18px; /* Font size inside card */
+    }
+}
+
+
+</style>
+
+

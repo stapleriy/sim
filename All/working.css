@@ -1,0 +1,33 @@
+
+  :root{
+    background-color: #fdf6e3;
+    color: #1e4d2b;
+    font-family: Montaga, Arial, Helvetica, sans-serif;
+  }
+  button{
+    background-color: #1e4d2b;
+    color: #fdf6e3;
+    height: 80px;
+    width: 160px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 36px;
+    border-style: solid;
+    border-color: #1e4d2b;
+    border-width: 2px;
+    font-size: 20px;
+    font-family: Montaga, Arial, Helvetica, sans-serif;
+    transition: all 0.6s;
+    box-shadow: 6px 6px 20px rgba(30, 77, 43, 0.5)
+
+  }
+  button:hover{
+    background-color: #fdf6e3;
+    color: #1e4d2b;
+    box-shadow: 6px 6px 2px rgb(30, 77, 43, 6);
+    border-style: solid;
+    border-color: #1e4d2b;
+    border-width: 4px;
+    transition: all 0.6s;
+
+  }

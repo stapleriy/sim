@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simran Poudel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1e4d2b;
+            --color-secondary: #2c6e49;
+            --color-accent: #4c956c;
+            --color-background: #fdf6e3;
+            --color-text: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montaga', serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background-color: var(--color-primary);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-background);
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-links a {
+            color: var(--color-background);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-background);
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger span:first-child {
+            top: 25%;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hamburger span:last-child {
+            bottom: 25%;
+        }
+
+        .hamburger.open span:first-child {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:last-child {
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+
+        .menu {
+            position: fixed;
+            top: 73px;
+            right: -100%;
+            width: calc(100% - 2rem);
+            max-width: 400px;
+            background-color: rgba(30, 77, 43, 0.95);
+            transition: 0.4s;
+            padding: 1rem;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+            margin: 0 1rem;
+        }
+
+        .menu.open {
+            right: 1rem;
+        }
+
+        .menu a {
+            display: block;
+            color: var(--color-background);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: var(--color-accent);
+        }
+
+        main {
+            flex-grow: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 1rem 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            background-color: rgba(30, 77, 43, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .links a {
+            background-color: var(--color-primary);
+            color: var(--color-background);
+            padding: 3.5rem;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.7rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .links a:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-background);
+            text-align: center;
+            padding: 1rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--color-background);
+            text-decoration: none;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .background-animation div {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(30, 77, 43, 0.4);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+        }
+
+        .background-animation div:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .background-animation div:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .background-animation div:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .background-animation div:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .background-animation div:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .hero {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 7rem;
+                flex: 1;
+                margin-bottom: 0;
+            }
+
+            .description {
+                flex: 1;
+                font-size: 1.6rem;
+                margin-top: 2.4rem;
+            }
+
+            .links {
+                flex-direction: row;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .links a {
+                flex: 1;
+                font-size: 2rem;
+                padding: 4rem;
+                height: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">Simran</div>Warm Sand: #E
+                <a href="#blog">Blog</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <main>
+        <div class="hero">
+            <h1>Hi!</h1>
+            <div class="description">
+                <p><strong>I'm Simran.</strong> Currently, I'm on a self-learning journey to become a UX/UI designer. Here, you'll find my projects and snippets of anything else I find myself dabbling into.</p>
+            </div>
+        </div>
+        <div class="cta">
+            <p>Feel Free to Explore My Work!</p>
+        </div>
+        <div class="links">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Get In Touch</h3>
+        <div class="footer-links">
+            <a href="#contact">Contact</a>
+            <a href="#linkedin">LinkedIn</a>
+            <a href="#others">Others</a>
+        </div>
+    </footer>
+
+    <div class="background-animation">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            menu.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickInsideHamburger = hamburger.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickInsideHamburger) {
+                hamburger.classList.remove('open');
+                menu.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

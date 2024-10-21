@@ -62,7 +62,16 @@ body {
   align-items: center;
   cursor: pointer;
   font-weight: bold;
+  text-decoration: none;
+  color: inherit;
 }
+
+.right-section a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 
 .menu-bar {
   display: none; /* Hide the menu bar by default */

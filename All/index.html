@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbetween Inkstains</title>
+    <style>
+        /* Existing styles... */
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+            justify-content: center; /* Center modal content */
+            align-items: center; /* Center modal content */
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .minimize-btn {
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        let currentPostId = null;
+
+        function toggleBlogPost(postId) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            const postContent = document.getElementById(postId);
+
+            if (currentPostId === postId) {
+                // If the same post is clicked, close it
+                modal.style.display = "none";
+                currentPostId = null;
+            } else {
+                // Show the clicked post and hide the previous one if any
+                if (currentPostId) {
+                    document.getElementById(currentPostId).style.display = "none";
+                }
+
+                modal.style.display = "flex";
+                modalContent.innerHTML = postContent.innerHTML;
+                currentPostId = postId;
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = "none";
+            currentPostId = null;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        function minimizePost() {
+            const modalContent = document.getElementById('modal-content');
+            const minimizeBtn = document.getElementById('minimize-btn');
+
+            if (modalContent.style.display === "none") {
+                modalContent.style.display = "block";
+                minimizeBtn.innerHTML = "Minimize";
+            } else {
+                modalContent.style.display = "none";
+                minimizeBtn.innerHTML = "Maximize";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <button id="minimize-btn" class="minimize-btn" onclick="minimizePost()">Minimize</button>
+            <div id="post-content"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="Inbetween Inkstains Logo Light.png" alt="Inbetween Inkstains Logo" class="logo">
+            <h1>Inbetween Inkstains</h1>
+            <p class="greeting">Thoughts that spill between the lines</p>
+        </header>
+
+        <p class="blog-intro">Recent Musings</p>
+
+        <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <div class="blog-card" onclick="toggleBlogPost('            blog-post-1')">
+              <div class="blog-card-content">
+                  <h3>The Worst Isn't That Bad</h3>
+                  <p>Understanding that challenges may not be as daunting as they seem.</p>
+                  <div class="read-time">6 min read</div>
+              </div>
+          </div>
+
+          <!-- Blog Card 2 -->
+          <div class="blog-card" onclick="toggleBlogPost('blog-post-2')">
+              <div class="blog-card-content">
+                  <h3>Embracing the In-Between</h3>
+                  <p>Finding beauty in life's transitional moments.</p>
+                  <div class="read-time">4 min read</div>
+              </div>
+          </div>
+
+          <!-- Blog Card 3 -->
+          <div class="blog-card" onclick="toggleBlogPost('blog-post-3')">
+              <div class="blog-card-content">
+                  <h3>The Art of Mindful Writing</h3>
+                  <p>Infusing presence into your words for impact.</p>
+                  <div class="read-time">5 min read</div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Blog Post 1 -->
+      <div id="blog-post-1" class="blog-post" style="display:none;">
+          <h2>The Worst Isn't That Bad</h2>
+          <div class="blog-post-content">
+              <p>Most of us tend to catastrophize even the smallest things...</p>
+              <!-- Additional content here -->
+          </div>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div id="blog-post-2" class="blog-post" style="display:none;">
+          <h2>Embracing the In-Between</h2>
+          <div class="blog-post-content">
+              <p>Life is often a series of transitions...</p>
+              <!-- Additional content here -->
+          </div>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div id="blog-post-3" class="blog-post" style="display:none;">
+          <h2>The Art of Mindful Writing</h2>
+          <div class="blog-post-content">
+              <p>Writing is not just a way to communicate...</p>
+              <!-- Additional content here -->
+          </div>
+      </div>
+  </div>
+</body>
+</html>
