@@ -1,0 +1,13 @@
+Falsy Values
+    false
+    0
+    NaN
+    undefined
+    null
+
+Truthy Values
+    Anything else that is not a falsy value is a truthy value.
+
+    Keyboard Shortcuts
+         Skip a line (Does not insert another below): Ctrl + Alt + Enter
+         Move to next line (Inserts one line below): Shift + Enter

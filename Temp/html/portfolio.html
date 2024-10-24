@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montaga&display=swap"
+      rel="stylesheet"
+    />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../css/portfolio.css"> </a>
+  </head>
+  <body>
+    <nav class="navbar">Navbar</nav>
+
+    <div class="container">
+      <div class="h1-h2">
+        <div class="h1">h1</div>
+
+        <div class="h2">h2</div>
+      </div>
+      <div class="highlights">
+        <div class="portfolio">Portfolio</div>
+        <div class="blog">Blog</div>
+      </div>
+
+      
+    </div>
+    <div class="footer">
+      <div class="get-in-touch">Get In Touch</div>
+      <div class="links">Links</div>
+    </div>
+
+    <script>
+      window.onscroll = function() {
+    const footer = document.querySelector('.footer');
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        footer.style.visibility = 'visible'; // Show footer
+    } else {
+        footer.style.visibility = 'hidden'; // Hide footer
+    }
+};
+
+// Initialize footer visibility
+document.querySelector('.footer').style.visibility = 'hidden'; // Start hidden
+
+    </script>
+  </body>
+</html>

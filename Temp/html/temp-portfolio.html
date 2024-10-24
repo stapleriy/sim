@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Portfolio</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+.logo {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.menu-icon {
+    font-size: 24px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+h1 {
+    color: green;
+}
+
+.greeting, .description, .filter, .get-in-touch, .links {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.filter button {
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.arrow {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <h1>Portfolio</h1>
+        <div class="menu-icon">☰</div>
+    </header>
+
+    <section class="greeting">
+        <p>Greeting!</p>
+    </section>
+
+    <section class="description">
+        <p>Description</p>
+    </section>
+
+    <nav class="filter">
+        <button>All</button>
+        <button>UX/UI</button>
+        <button>Copywriting</button>
+    </nav>
+
+    <section class="cards">
+        <div class="card-group">
+            <button class="arrow">❮</button>
+            <div class="card">
+                <h3>Title</h3>
+                <p>Content Preview</p>
+            </div>
+            <div class="card">
+                <h3>Title</h3>
+                <p>Content Preview</p>
+            </div>
+            <button class="arrow">❯</button>
+        </div>
+
+        <div class="card-group">
+            <button class="arrow">❮</button>
+            <div class="card">
+                <h3>Title</h3>
+                <p>Content Preview</p>
+            </div>
+            <div class="card">
+                <h3>Title</h3>
+                <p>Content Preview</p>
+            </div>
+            <button class="arrow">❯</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="get-in-touch">Get In Touch</div>
+        <div class="links">Links</div>
+    </footer>
+</body>
+</html>

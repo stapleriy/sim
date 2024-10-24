@@ -1,0 +1,133 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.navbar {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  height: 7vh;
+  overflow: hidden;
+  align-items: center;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.container {
+  background-color: blue;
+  height: 93vh;
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 8px 8px 20% 8px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  z-index: 2;
+  top: 7vh;
+}
+
+.h1-h2{
+  background-color: violet;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  gap: 16px;
+  padding: 8px;
+  margin: 8px;
+}
+
+.h1{
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.h2{
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlights{
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.portfolio{
+  background-color: salmon;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog{
+  background-color: seagreen;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  background-color: slateblue;
+  height: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+}
+
+.get-in-touch{
+  background-color: slategrey;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.links{
+  background-color: steelblue;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+

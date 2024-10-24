@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day UI/UX Design Learning Roadmap</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #475569;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --accent: #f97316;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        h4 {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .task {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .task-header {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .task-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--background);
+            padding: 0.25rem 0.75rem;
+            border-radius: 16px;
+            font-size: 0.875rem;
+        }
+
+        .task ul {
+            list-style-type: none;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .task li {
+            position: relative;
+            margin: 0.5rem 0;
+        }
+
+        .task li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: -1rem;
+        }
+
+        .completion {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .resources {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .task-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>30-Day UI/UX Design Learning Roadmap</h1>
+        
+        <h2>Initial Setup and Tools</h2>
+        <div class="task">
+            <div class="task-header">
+                <span class="task-meta">🕐 60 minutes</span>
+                <span class="task-meta">⭐ Difficulty: 1/5</span>
+            </div>
+            <h4>Required Tools (All Free)</h4>
+            <ul>
+                <li>Figma (Web-based)</li>
+                <li>Penpot (Open-source alternative to Figma)</li>
+                <li>Google Chrome or Firefox</li>
+                <li>Notion (Free plan)</li>
+            </ul>
+            <div class="resources">
+                <strong>📚 Setup Resources:</strong>
+                <ul>
+                    <li>Figma: figma.com</li>
+                    <li>Penpot: penpot.app</li>
+                    <li>Notion: notion.so</li>
+                </ul>
+            </div>
+            <div class="completion">
+                <strong>✅ Completion Criteria:</strong>
+                <ul>
+                    <li>All tools installed and accounts created</li>
+                    <li>Test projects created in both Figma and Penpot</li>
+                    <li>Notion workspace set up with provided templates</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Week 1: Foundations</h2>
+        <h3>Day 1: Design Fundamentals</h3><!-- Continuing from where we left off -->
+        
+        <div class="task">
+            <h4>Block 1</h4>
+            <div class="task-header">
+                <span class="task-meta">🕐 90 minutes</span>
+                <span class="task-meta">⭐ Difficulty: 2/5</span>
+            </div>
+            <p><strong>1. Design Thinking Introduction</strong></p>
+            <ul>
+                <li>Watch "Design Thinking in 3 Minutes" by IDEO</li>
+                <li>Read "The Design Thinking Process" guide</li>
+                <li>Take notes on key concepts</li>
+            </ul>
+            <div class="resources">
+                <strong>📚 Learning Resources:</strong>
+                <ul>
+                    <li>Primary: DesignKit.org - Introduction to Design Thinking</li>
+                    <li>Backup: Stanford d.school's Design Thinking Crash Course</li>
+                </ul>
+            </div>
+            <div class="completion">
+                <strong>✅ Completion Criteria:</strong>
+                <p>Create a mind map of design thinking principles and their applications</p>
+            </div>
+
+            <p><strong>2. UI Elements Fundamentals</strong></p>
+            <div class="task-header">
+                <span class="task-meta">🕐 90 minutes</span>
+                <span class="task-meta">⭐ Difficulty: 2/5</span>
+            </div>
+            <ul>
+                <li>Study basic UI elements (buttons, forms, cards)</li>
+                <li>Analyze examples from Material Design</li>
+                <li>Create basic element library in Figma</li>
+            </ul>
+            <div class="resources">
+                <strong>📚 Learning Resources:</strong>
+                <ul>
+                    <li>Primary: Material Design Guidelines</li>
+                    <li>Backup: Apple Human Interface Guidelines</li>
+                </ul>
+            </div>
+            <div class="completion">
+                <strong>✅ Completion Criteria:</strong>
+                <p>Create a basic UI kit with 5 essential elements (buttons, input fields, cards, navigation, icons)</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h4>Block 2</h4>
+            <div class="task-header">
+                <span class="task-meta">🕐 120 minutes</span>
+                <span class="task-meta">⭐ Difficulty: 3/5</span>
+            </div>
+            <p><strong>1. Color Theory Foundations</strong></p>
+            <ul>
+                <li>Study color psychology and meaning</li>
+                <li>Learn color harmony rules</li>
+                <li>Practice with color wheel tools</li>
+                <li>Create sample palettes</li>
+            </ul>
+            <div class="resources">
+                <strong>📚 Learning Resources:</strong>
+                <ul>
+                    <li>Primary: Coolors.co color theory guide</li>
+                    <li>Backup: Adobe Color Wheel (free)</li>
+                </ul>
+            </div>
+            <div class="completion">
+                <strong>✅ Completion Criteria:</strong>
+                <ul>
+                    <li>Create 3 different color palettes using different harmony rules</li>
+                    <li>Document the psychology behind each palette</li>
+                </ul>
+            </div>
+
+            <p><strong>2. Typography Basics</strong></p>
+            <ul>
+                <li>Learn type anatomy</li>
+                <li>Study font pairing principles</li>
+                <li>Practice with Google Fonts</li>
+            </ul>
+            <div class="resources">
+                <strong>📚 Learning Resources:</strong>
+                <ul>
+                    <li>Primary: Typewolf's Typography Resources</li>
+                    <li>Backup: Google Fonts Knowledge</li>
+                </ul>
+            </div>
+            <div class="completion">
+                <strong>✅ Completion Criteria:</strong>
+                <ul>
+                    <li>Create 3 font pairing combinations with rationale</li>
+                    <li>Build a simple type scale system</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h4>Block 3</h4>
+            <div class="task-header">
+                <span class="task-meta">🕐 120 minutes</span>
+                <span class="task-meta">⭐ Difficulty: 3/5</span>
+            </div>
+            <p><strong>1. Mini-Project: Landing Page Header</strong></p>
+            <ul>
+                <li>Apply learned color theory</li>
+                <li>Implement typography principles</li>
+                <li>Create responsive grid layout</li>
+                <li>Design navigation elements</li>
+            </ul>
+            <div class="completion">
+                <strong>✅ Completion Criteria:</strong>
+                <ul>
+                    <li>Complete header design with:
+                        <ul>
+                            <li>Logo placement</li>
+                            <li>Navigation menu</li>
+                            <li>Call-to-action button</li>
+                            <li>Proper color scheme</li>
+                            <li>Typography hierarchy</li>
+                        </ul>
+                    </li>
+                    <li>Document design decisions and rationale</li>
+                </ul>
+            </div>
+
+            <p><strong>2. Daily Review and Community Engagement</strong></p>
+            <div class="task-header">
+                <span class="task-meta">🕐 30 minutes</span>
+                <span class="task-meta">⭐ Difficulty: 1/5</span>
+            </div>
+            <ul>
+                <li>Join Figma Community</li>
+                <li>Share header design in UI/UX beginners community</li>
+                <li>Review and document key learnings</li>
+                <li>Plan modifications based on initial learning experience</li>
+            </ul>
+            <div class="completion">
+                <strong>✅ Completion Criteria:</strong>
+                <ul>
+                    <li>Daily learning log completed</li>
+                    <li>Community profile set up</li>
+                    <li>First design shared for feedback</li>
+                    <li>Action items noted for Day 2</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Day 2: Layout and Visual Hierarchy</h3>
+
+        <div class="task">
+          <h4>Block 1</h4>
+          <div class="task-header">
+              <span class="task-meta">🕐 90 minutes</span>
+              <span class="task-meta">⭐ Difficulty: 3/5</span>
+          </div>
+          <p><strong>1. Grid Systems and Layout</strong></p>
+          <ul>
+              <li>Study grid theory fundamentals</li>
+              <li>Learn different grid types (column, modular, baseline)</li>
+              <li>Practice with Figma's grid tools</li>
+          </ul>
+          <div class="resources">
+              <strong>📚 Learning Resources:</strong>
+              <ul>
+                  <li>Primary: Grid Systems in Graphic Design by Josef Müller-Brockmann (Summary)</li>
+                  <li>Backup: Figma's Grid Tutorial</li>
+              </ul>
+          </div>
+          <div class="completion">
+              <strong>✅ Completion Criteria:</strong>
+              <ul>
+                  <li>Create three different grid systems (8, 12, and 16 columns)</li>
+                  <li>Document use cases for each grid type</li>
+              </ul>
+          </div>
+
+          <p><strong>2. Visual Hierarchy Principles</strong></p>
+          <div class="task-header">
+              <span class="task-meta">🕐 90 minutes</span>
+              <span class="task-meta">⭐ Difficulty: 3/5</span>
+          </div>
+          <ul>
+              <li>Study Gestalt principles</li>
+              <li>Learn scanning patterns (F-pattern, Z-pattern)</li>
+              <li>Analyze successful website layouts</li>
+          </ul>
+          <div class="resources">
+              <strong>📚 Learning Resources:</strong>
+              <ul>
+                  <li>Primary: Interaction Design Foundation - Visual Hierarchy</li>
+                  <li>Backup: UX Planet's Visual Hierarchy Guide</li>
+              </ul>
+          </div>
+          <div class="completion">
+              <strong>✅ Completion Criteria:</strong>
+              <p>Create analysis document of 3 popular websites identifying their visual hierarchy patterns</p>
+          </div>
+      </div>
+
+      <div class="task">
+          <h4>Block 2</h4>
+          <div class="task-header">
+              <span class="task-meta">🕐 120 minutes</span>
+              <span class="task-meta">⭐ Difficulty: 4/5</span>
+          </div>
+          <p><strong>1. Responsive Design Principles</strong></p>
+          <ul>
+              <li>Learn mobile-first design approach</li>
+              <li>Study breakpoints and fluid layouts</li>
+              <li>Practice with auto-layout in Figma</li>
+          </ul>
+          <div class="resources">
+              <strong>📚 Learning Resources:</strong>
+              <ul>
+                  <li>Primary: Figma's Auto-layout Documentation</li>
+                  <li>Backup: Material Design's Responsive Layout Grid</li>
+              </ul>
+          </div>
+          <div class="completion">
+              <strong>✅ Completion Criteria:</strong>
+              <ul>
+                  <li>Create responsive layout for one component (e.g., navigation menu)</li>
+                  <li>Document responsive breakpoints and behavior</li>
+              </ul>
+          </div>
+
+          <p><strong>2. Whitespace and Spacing Systems</strong></p>
+          <ul>
+              <li>Learn about spatial rhythm</li>
+              <li>Study 8-point grid system</li>
+              <li>Practice with spacing scales</li>
+          </ul>
+          <div class="completion">
+              <strong>✅ Completion Criteria:</strong>
+              <ul>
+                  <li>Create spacing system documentation</li>
+                  <li>Apply spacing system to yesterday's header design</li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="task">
+          <h4>Block 3</h4>
+          <div class="task-header">
+              <span class="task-meta">🕐 120 minutes</span>
+              <span class="task-meta">⭐ Difficulty: 4/5</span>
+          </div>
+          <p><strong>1. Mini-Project: Feature Section</strong></p>
+          <ul>
+              <li>Design responsive feature grid</li>
+              <li>Apply visual hierarchy principles</li>
+              <li>Implement proper spacing system</li>
+              <li>Create mobile and desktop versions</li>
+          </ul>
+          <div class="completion">
+              <strong>✅ Completion Criteria:</strong>
+              <ul>
+                  <li>Complete feature section design with:
+                      <ul>
+                          <li>Responsive grid layout</li>
+                          <li>Clear visual hierarchy</li>
+                          <li>Consistent spacing</li>
+                          <li>Mobile and desktop variations</li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+
+          <p><strong>2. Portfolio Progress and Community Engagement</strong></p>
+          <div class="task-header">
+              <span class="task-meta">🕐 30 minutes</span>
+              <span class="task-meta">⭐ Difficulty: 2/5</span>
+          </div>
+          <ul>
+              <li>Document design process</li>
+              <li>Share work-in-progress in community</li>
+              <li>Collect and organize feedback</li>
+          </ul>
+          <div class="completion">
+              <strong>✅ Completion Criteria:</strong>
+              <ul>
+                  <li>Process documentation completed</li>
+                  <li>Feedback collected and organized</li>
+                  <li>Action items noted for Day 3</li>
+              </ul>
+          </div>
+      </div>
+
+      <h3>Day 3: User Interface Components</h3><div class="task">
+        <h4>Block 1</h4>
+        <div class="task-header">
+            <span class="task-meta">🕐 90 minutes</span>
+            <span class="task-meta">⭐ Difficulty: 3/5</span>
+        </div>
+        <p><strong>1. Common UI Components</strong></p>
+        <ul>
+            <li>Study button states and variations</li>
+            <li>Learn form element best practices</li>
+            <li>Understand navigation patterns</li>
+        </ul>
+        <div class="resources">
+            <strong>📚 Learning Resources:</strong>
+            <ul>
+                <li>Primary: Material Design Components Guide</li>
+                <li>Backup: Open Source UI Component Libraries</li>
+            </ul>
+        </div>
+        <div class="completion">
+            <strong>✅ Completion Criteria:</strong>
+            <ul>
+                <li>Create component library with:
+                    <ul>
+                        <li>Button states (normal, hover, active, disabled)</li>
+                        <li>Form elements (input, dropdown, checkbox, radio)</li>
+                        <li>Basic navigation components</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <p><strong>2. Micro-interactions</strong></p>
+        <div class="task-header">
+            <span class="task-meta">🕐 90 minutes</span>
+            <span class="task-meta">⭐ Difficulty: 3/5</span>
+        </div>
+        <ul>
+            <li>Learn principles of micro-interactions</li>
+            <li>Study hover and click states</li>
+            <li>Practice with Figma's Smart Animate</li>
+        </ul>
+        <div class="resources">
+            <strong>📚 Learning Resources:</strong>
+            <ul>
+                <li>Primary: Figma's Interactive Components Tutorial</li>
+                <li>Backup: Micro-interactions in UI Design Guide</li>
+            </ul>
+        </div>
+        <div class="completion">
+            <strong>✅ Completion Criteria:</strong>
+            <p>Create 3 micro-interactions for common UI elements</p>
+        </div>
+    </div>
+
+    <div class="task">
+        <h4>Block 2</h4>
+        <div class="task-header">
+            <span class="task-meta">🕐 120 minutes</span>
+            <span class="task-meta">⭐ Difficulty: 4/5</span>
+        </div>
+        <p><strong>1. Component States and Variants</strong></p>
+        <ul>
+            <li>Learn component state management</li>
+            <li>Create variant sets</li>
+            <li>Practice with constraints and auto-layout</li>
+        </ul>
+        <div class="resources">
+            <strong>📚 Learning Resources:</strong>
+            <ul>
+                <li>Primary: Figma Variants Tutorial</li>
+                <li>Backup: Component States Best Practices Guide</li>
+            </ul>
+        </div>
+        <div class="completion">
+            <strong>✅ Completion Criteria:</strong>
+            <ul>
+                <li>Create a complete component with all states for:
+                    <ul>
+                        <li>Primary and secondary buttons</li>
+                        <li>Text input field</li>
+                        <li>Navigation item</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <p><strong>2. Accessibility in Components</strong></p>
+        <ul>
+            <li>Learn color contrast requirements</li>
+            <li>Study focus states</li>
+            <li>Understand error states and feedback</li>
+        </ul>
+        <div class="completion">
+            <strong>✅ Completion Criteria:</strong>
+            <ul>
+                <li>Audit and update all components for accessibility</li>
+                <li>Document accessibility considerations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="task">
+        <h4>Block 3</h4>
+        <div class="task-header">
+            <span class="task-meta">🕐 120 minutes</span>
+            <span class="task-meta">⭐ Difficulty: 4/5</span>
+        </div>
+        <p><strong>1. Mini-Project: Sign Up Form</strong></p>
+        <ul>
+            <li>Design form layout</li>
+            <li>Implement all component states</li>
+            <li>Add micro-interactions</li>
+            <li>Ensure accessibility compliance</li>
+        </ul>
+        <div class="completion">
+            <strong>✅ Completion Criteria:</strong>
+            <ul>
+                <li>Complete sign-up form with:
+                    <ul>
+                        <li>All required form elements</li>
+                        <li>Error states and validation</li>
+                        <li>Success confirmation</li>
+                        <li>Responsive layout</li>
+                        <li>Accessible design</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <p><strong>2. Component Library Organization</strong></p>
+        <div class="task-header">
+            <span class="task-meta">🕐 30 minutes</span>
+            <span class="task-meta">⭐ Difficulty: 2/5</span>
+        </div>
+        <ul>
+            <li>Organize components into categories</li>
+            <li>Create component documentation</li>
+            <li>Set up naming conventions</li>
+        </ul>
+        <div class="completion">
+            <strong>✅ Completion Criteria:</strong>
+            <ul>
+                <li>Organized component library</li>
+                <li>Documentation for all components</li>
+                <li>Action items noted for Day 4</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Day 4: Information Architecture</h3><div class="task">
+      <h4>Block 1</h4>
+      <div class="task-header">
+          <span class="task-meta">🕐 90 minutes</span>
+          <span class="task-meta">⭐ Difficulty: 3/5</span>
+      </div>
+      <p><strong>1. Information Architecture Basics</strong></p>
+      <ul>
+          <li>Learn IA principles and methodologies</li>
+          <li>Study content organization patterns</li>
+          <li>Understand user flow mapping</li>
+      </ul>
+      <div class="resources">
+          <strong>📚 Learning Resources:</strong>
+          <ul>
+              <li>Primary: Information Architecture Institute Resources</li>
+              <li>Backup: UX Booth IA Guide</li>
+          </ul>
+      </div>
+      <div class="completion">
+          <strong>✅ Completion Criteria:</strong>
+          <ul>
+              <li>Create basic site map for e-commerce website</li>
+              <li>Document content organization principles</li>
+          </ul>
+      </div>
+
+      <p><strong>2. User Flow Diagrams</strong></p>
+      <div class="task-header">
+          <span class="task-meta">🕐 90 minutes</span>
+          <span class="task-meta">⭐ Difficulty: 3/5</span>
+      </div>
+      <ul>
+          <li>Learn user flow diagram conventions</li>
+          <li>Study common flow patterns</li>
+          <li>Practice with Figma's tools for diagrams</li>
+      </ul>
+      <div class="resources">
+          <strong>📚 Learning Resources:</strong>
+          <ul>
+              <li>Primary: Nielsen Norman Group - User Flow Patterns</li>
+              <li>Backup: UX Pin Flow Design Guidelines</li>
+          </ul>
+      </div>
+      <div class="completion">
+          <strong>✅ Completion Criteria:</strong>
+          <p>Create user flow for sign-up process from Day 3's form</p>
+      </div>
+  </div>
+
+  <div class="task">
+      <h4>Block 2</h4>
+      <div class="task-header">
+          <span class="task-meta">🕐 120 minutes</span>
+          <span class="task-meta">⭐ Difficulty: 4/5</span>
+      </div>
+      <p><strong>1. Navigation Patterns</strong></p>
+      <ul>
+          <li>Study navigation best practices</li>
+          <li>Learn about information scent</li>
+          <li>Practice navigation hierarchy</li>
+      </ul>
+      <div class="resources">
+          <strong>📚 Learning Resources:</strong>
+          <ul>
+              <li>Primary: Navigation Design Patterns</li>
+              <li>Backup: UX Movement Navigation Studies</li>
+          </ul>
+      </div>
+      <div class="completion">
+          <strong>✅ Completion Criteria:</strong>
+          <ul>
+              <li>Design three different navigation patterns:
+                  <ul>
+                      <li>Global navigation</li>
+                      <li>Local navigation</li>
+                      <li>Utility navigation</li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+
+      <p><strong>2. Card Sorting Exercise</strong></p>
+      <ul>
+          <li>Learn card sorting methodology</li>
+          <li>Practice organizing content</li>
+          <li>Analyze sorting results</li>
+      </ul>
+      <div class="completion">
+          <strong>✅ Completion Criteria:</strong>
+          <ul>
+              <li>Complete card sorting exercise for e-commerce categories</li>
+              <li>Document sorting rationale and findings</li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="task">
+      <h4>Block 3</h4>
+      <div class="task-header">
+          <span class="task-meta">🕐 120 minutes</span>
+          <span class="task-meta">⭐ Difficulty: 4/5</span>
+      </div>
+      <p><strong>1. Mini-Project: Website Architecture</strong></p>
+      <ul>
+          <li>Create comprehensive site map</li>
+          <li>Design navigation structure</li>
+          <li>Map key user flows</li>
+          <li>Document content hierarchy</li>
+      </ul>
+      <div class="completion">
+          <strong>✅ Completion Criteria:</strong>
+          <ul>
+              <li>Complete information architecture package:
+                  <ul>
+                      <li>Site map visualization</li>
+                      <li>Primary navigation structure</li>
+                      <li>Two key user flows</li>
+                      <li>Content hierarchy documentation</li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+
+      <p><strong>2. Portfolio Documentation</strong></p>
+      <div class="task-header">
+          <span class="task-meta">🕐 30 minutes</span>
+          <span class="task-meta">⭐ Difficulty: 2/5</span>
+      </div>
+      <ul>
+          <li>Document IA process</li>
+          <li>Create case study outline</li>
+          <li>Organize project assets</li>
+      </ul>
+      <div class="completion">
+          <strong>✅ Completion Criteria:</strong>
+          <ul>
+              <li>Process documentation completed</li>
+              <li>Case study structure outlined</li>
+              <li>Action items noted for Day 5</li>
+          </ul>
+      </div>
+  </div>
+
+  <h3>Day 5: Wireframing Fundamentals</h3><div class="task">
+    <h4>Block 1</h4>
+    <div class="task-header">
+        <span class="task-meta">🕐 90 minutes</span>
+        <span class="task-meta">⭐ Difficulty: 3/5</span>
+    </div>
+    <p><strong>1. Wireframing Basics</strong></p>
+    <ul>
+        <li>Learn wireframe types (low, mid, high fidelity)</li>
+        <li>Study wireframing conventions</li>
+        <li>Practice basic shapes and patterns</li>
+    </ul>
+    <div class="resources">
+        <strong>📚 Learning Resources:</strong>
+        <ul>
+            <li>Primary: Figma Wireframing Kit</li>
+            <li>Backup: Balsamiq Wireframing Guidelines</li>
+        </ul>
+    </div>
+    <div class="completion">
+        <strong>✅ Completion Criteria:</strong>
+        <ul>
+            <li>Create wireframe components library</li>
+            <li>Document wireframing conventions used</li>
+        </ul>
+    </div>
+
+    <p><strong>2. Content Blocks</strong></p>
+    <div class="task-header">
+        <span class="task-meta">🕐 90 minutes</span>
+        <span class="task-meta">⭐ Difficulty: 3/5</span>
+    </div>
+    <ul>
+        <li>Learn content block patterns</li>
+        <li>Study content hierarchy</li>
+        <li>Practice layout variations</li>
+    </ul>
+    <div class="resources">
+        <strong>📚 Learning Resources:</strong>
+        <ul>
+            <li>Primary: Content Block Patterns Guide</li>
+            <li>Backup: UI Patterns Library</li>
+        </ul>
+    </div>
+    <div class="completion">
+        <strong>✅ Completion Criteria:</strong>
+        <p>Create 5 different content block wireframes</p>
+    </div>
+</div>
+
+<div class="task">
+    <h4>Block 2</h4>
+    <div class="task-header">
+        <span class="task-meta">🕐 120 minutes</span>
+        <span class="task-meta">⭐ Difficulty: 4/5</span>
+    </div>
+    <p><strong>1. Responsive Wireframing</strong></p>
+    <ul>
+        <li>Learn mobile-first wireframing</li>
+        <li>Study responsive patterns</li>
+        <li>Practice breakpoint wireframes</li>
+    </ul>
+    <div class="resources">
+        <strong>📚 Learning Resources:</strong>
+        <ul>
+            <li>Primary: Responsive Patterns Library</li>
+            <li>Backup: Mobile-First Wireframing Guide</li>
+        </ul>
+    </div>
+    <div class="completion">
+        <strong>✅ Completion Criteria:</strong>
+        <ul>
+            <li>Create responsive wireframes for:
+                <ul>
+                    <li>Mobile (320px)</li>
+                    <li>Tablet (768px)</li>
+                    <li>Desktop (1240px)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <p><strong>2. Navigation Wireframes</strong></p>
+    <ul>
+        <li>Wire different navigation patterns</li>
+        <li>Practice mobile menu solutions</li>
+        <li>Create breadcrumb wireframes</li>
+    </ul>
+    <div class="completion">
+        <strong>✅ Completion Criteria:</strong>
+        <ul>
+            <li>Complete wireframes for 3 navigation types</li>
+            <li>Document responsive behavior</li>
+        </ul>
+    </div>
+</div>
+
+<div class="task">
+    <h4>Block 3</h4>
+    <div class="task-header">
+        <span class="task-meta">🕐 120 minutes</span>
+        <span class="task-meta">⭐ Difficulty: 4/5</span>
+    </div>
+    <p><strong>1. Mini-Project: Homepage Wireframe</strong></p>
+    <ul>
+        <li>Apply information architecture</li>
+        <li>Create homepage wireframe</li>
+        <li>Include all responsive breakpoints</li>
+        <li>Add annotations</li>
+    </ul>
+    <div class="completion">
+        <strong>✅ Completion Criteria:</strong>
+        <ul>
+            <li>Complete homepage wireframe set:
+                <ul>
+                    <li>Desktop version</li>
+                    <li>Tablet version</li>
+                    <li>Mobile version</li>
+                    <li>Detailed annotations</li>
+                    <li>Component documentation</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <p><strong>2. Week 1 Review and Planning</strong></p>
+    <div class="task-header">
+        <span class="task-meta">🕐 30 minutes</span>
+        <span class="task-meta">⭐ Difficulty: 2/5</span>
+    </div>
+    <ul>
+        <li>Review week's progress</li>
+        <li>Organize all deliverables</li>
+        <li>Plan for Week 2</li>
+        <li>Share progress in community</li>
+    </ul>
+    <div class="completion">
+        <strong>✅ Completion Criteria:</strong>
+        <ul>
+            <li>Week 1 progress documented</li>
+            <li>Portfolio pieces organized</li>
+            <li>Community feedback collected</li>
+            <li>Week 2 goals defined</li>
+        </ul>
+    </div>
+</div>
+
+<h2>Week 2: User Experience and Research</h2>
+<h3>Day 6: User Research Fundamentals</h3>
